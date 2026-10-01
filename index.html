@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Qué está pasando?</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <main class="composer" id="composer">
+    <img class="avatar" src="img/icono.png" alt="Foto de perfil">
+    <div class="body">
+      <label for="tuit" class="sr-only">Escribí tu publicación</label>
+      <textarea id="tuit" rows="4" maxlength="140" placeholder="¿Qué está pasando?"></textarea>
+      <div class="bar">
+        <span id="count">0 / 140</span>
+        <button id="publicar" type="button">Publicar</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="click-progress">
+    <span class="click-progress-count" id="click-progress-count" aria-live="polite"></span>
+    <div class="click-progress-steps" id="click-progress-steps" role="progressbar" aria-label="Progreso de clics" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div id="errores" aria-hidden="true"></div>
+  <div id="flash-error" aria-hidden="true"></div>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-texto-1" hidden>
+    <div class="modal-card">
+      <p id="modal-texto-1"></p>
+      <button id="reiniciar" type="button">Volver a intentar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
